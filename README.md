@@ -32,8 +32,7 @@
     df = news_downloader.dataframe
     selected_columns = ["title", "content"]
     df[selected_columns].head(10)
-    
-    --------------------
+
     
     #         title	                                 content
     # 0	分析师：伊朗重回国际原油市场无法阻止	        新浪美股讯 北京时间1月1日晚CNBC称，加拿大皇家银行（RBC）分析师Helima Cro...
