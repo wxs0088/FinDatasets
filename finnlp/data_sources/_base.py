@@ -3,7 +3,7 @@ import requests
 
 class FinNLP_Downloader:
     def __init__(self, args = {}):
-        self.use_proxy = True if "use_proxy" in args.keys() else False
+        self.use_proxy = True if "use_proxy" in args.keys() and args['use_proxy'] is not None else False
         if self.use_proxy:
             self.country = args["use_proxy"]
         else:

@@ -37,7 +37,7 @@ def check_us_ips(proxies_list):
 
 def get_china_free_proxy(pages = 10):
     proxies_list = []
-    for page in tqdm(range(1, pages+1), desc = "Gathering free ips by pages..."):
+    for page in tqdm(range(1, pages+1), desc = "获取免费的ip..."):
 
         base_url = f'https://www.kuaidaili.com/free/inha/{page}'
         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36'}
@@ -75,7 +75,7 @@ def get_us_free_proxy(pages = 10):
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36'}
     response = requests.get(url, headers=headers)
     if response.status_code != 200:
-        print("Connection Error. Please make sure that your computer now have the access to Google.com")
+        print("连接错误。请确保您的计算机现在可以访问Google.com。")
     res = etree.HTML(response.text)
     http_type = "HTTP"
     proxies_list = []
@@ -98,8 +98,8 @@ def get_us_free_proxy(pages = 10):
     total = pages* 15
     proxies_list = proxies_list[:total] 
     can_use = check_us_ips(proxies_list)
-    print(f'Get proxy ips: {len(proxies_list)}.')
-    print(f'Usable proxy ips: {len(can_use)}.' )
+    print(f'获取到的代理ip数量: {len(proxies_list)}.')
+    print(f'能用的代理数量： {len(can_use)}.' )
 
     return can_use
 
