@@ -18,17 +18,19 @@ def getWeiboKeyword(start_date, end_date, keyword, config):
     df = downloader.dataframe
     df = df.drop_duplicates()
     selected_columns = ["date", "content"]
-    df[selected_columns].head(10)
+    info_df = df[selected_columns]
+    print(info_df.head(10))
 
 
 if __name__ == '__main__':
-    start_date = "2016-01-01"
-    end_date = "2016-01-02"
-    stock = "茅台"
+    start_date = "2016-01-01" # 开始日期
+    end_date = "2016-01-02" # 结束日期
+    keyword = "茅台" # 关键词
     config = {
         "use_proxy": None,
         "max_retry": 5,
         "proxy_pages": 5,
         "cookies": "Your_Login_Cookies",
     }
-    getWeiboKeyword(start_date, end_date, stock, config)
+    # 从微博获取数据
+    getWeiboKeyword(start_date, end_date, keyword, config)

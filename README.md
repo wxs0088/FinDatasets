@@ -4,7 +4,6 @@
 
 ### 1. 参数/配置
 
-
 * `use_proxy`: 是否使用代理，`china_free`和`us_free`，分别代表中国免费代理和全球免费代理，如果不使用代理则为`None`。
 * `max_retry`: 最大重试次数，如果下载失败，会重试`max_retry`次。
 * `proxy_pages`: 代理页数，如果使用代理，会从代理网站下载`proxy_pages`页的代理。(这里使用的是[快代理](https://www.kuaidaili.com/free/dps/)的免费代理IP)
